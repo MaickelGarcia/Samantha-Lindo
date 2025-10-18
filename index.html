@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Samantha Lindo - Diseñadora Gráfica</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -11,248 +12,507 @@
             box-sizing: border-box;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
             background-color: #ffffff;
-            color: #1a1a1a;
-            line-height: 1.6;
+            color: #2c2c2c;
+            overflow-x: hidden;
         }
 
+        /* HEADER HERO */
         header {
-            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
-            color: #ffffff;
-            padding: 80px 20px;
-            text-align: center;
-            border-bottom: 3px solid #000;
-        }
-
-        header h1 {
-            font-size: 3.5em;
-            margin-bottom: 10px;
-            font-weight: 700;
-            letter-spacing: 2px;
-        }
-
-        header p {
-            font-size: 1.3em;
-            opacity: 0.9;
-            font-weight: 300;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 60px 20px;
-        }
-
-        .intro {
-            text-align: center;
-            margin-bottom: 80px;
-            font-size: 1.1em;
-            color: #444;
-        }
-
-        .intro p {
-            max-width: 700px;
-            margin: 0 auto;
-        }
-
-        .portfolio-title {
-            text-align: center;
-            font-size: 2.2em;
-            margin-bottom: 60px;
-            color: #1a1a1a;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 50%, #0f0f0f 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
             position: relative;
-            padding-bottom: 20px;
+            overflow: hidden;
         }
 
-        .portfolio-title::after {
+        header::before {
             content: '';
             position: absolute;
-            width: 80px;
-            height: 3px;
-            background-color: #000;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(255,255,255,0.05) 0%, transparent 70%);
+            border-radius: 50%;
+            top: -200px;
+            right: -200px;
+        }
+
+        header::after {
+            content: '';
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(255,255,255,0.03) 0%, transparent 70%);
+            border-radius: 50%;
+            bottom: -100px;
+            left: -100px;
+        }
+
+        .header-content {
+            text-align: center;
+            color: #ffffff;
+            z-index: 1;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .header-content h1 {
+            font-size: 4.5em;
+            font-weight: 800;
+            letter-spacing: -1px;
+            margin-bottom: 15px;
+            line-height: 1.1;
+        }
+
+        .header-content .subtitle {
+            font-size: 1.4em;
+            font-weight: 300;
+            opacity: 0.9;
+            margin-bottom: 40px;
+            letter-spacing: 0.5px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 16px 45px;
+            background-color: #ffffff;
+            color: #0f0f0f;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1em;
+            transition: all 0.3s ease;
+            border: 2px solid #ffffff;
+        }
+
+        .cta-button:hover {
+            background-color: transparent;
+            color: #ffffff;
+        }
+
+        /* NAVIGATION */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 70px;
+            background: rgba(15, 15, 15, 0.95);
+            backdrop-filter: blur(10px);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 50px;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        nav .logo {
+            font-size: 1.3em;
+            font-weight: 800;
+            color: #ffffff;
+            letter-spacing: 1px;
+        }
+
+        nav a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            font-weight: 500;
+            margin-left: 40px;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #ffffff;
+        }
+
+        /* CONTAINER */
+        .container {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 120px 40px;
+        }
+
+        /* SOBRE SECCIÓN */
+        .about {
+            background-color: #f8f8f8;
+            padding: 120px 40px !important;
+        }
+
+        .section-title {
+            font-size: 3em;
+            font-weight: 800;
+            margin-bottom: 60px;
+            color: #0f0f0f;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(90deg, #0f0f0f, transparent);
+            bottom: -20px;
+            left: 0;
+        }
+
+        .about-text {
+            font-size: 1.2em;
+            line-height: 1.8;
+            color: #555;
+            max-width: 800px;
+            margin-top: 40px;
+        }
+
+        /* PORTFOLIO */
+        .portfolio-section {
+            padding: 120px 40px !important;
         }
 
         .portfolio-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 40px;
-            margin-bottom: 100px;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 70px;
         }
 
-        .portfolio-item {
-            background: #f5f5f5;
-            border-radius: 8px;
+        .portfolio-card {
+            position: relative;
+            border-radius: 12px;
             overflow: hidden;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            background: #000;
+            height: 400px;
+            cursor: pointer;
+            group: "card";
         }
 
-        .portfolio-item:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
-        }
-
-        .portfolio-item img {
+        .portfolio-card img {
             width: 100%;
-            height: 250px;
+            height: 100%;
             object-fit: cover;
+            transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
             display: block;
         }
 
-        .portfolio-item-title {
-            padding: 20px;
-            text-align: center;
-            font-weight: 600;
-            color: #1a1a1a;
-            border-top: 2px solid #000;
+        .portfolio-card:hover img {
+            transform: scale(1.08);
         }
 
-        .tech-section {
-            background-color: #1a1a1a;
+        .portfolio-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.5) 40%, transparent);
+            padding: 40px 25px 25px;
+            transform: translateY(30px);
+            opacity: 0;
+            transition: all 0.4s ease;
+        }
+
+        .portfolio-card:hover .portfolio-overlay {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .portfolio-overlay h3 {
             color: #ffffff;
-            padding: 80px 20px;
-            text-align: center;
-            margin-top: 60px;
+            font-size: 1.5em;
+            font-weight: 700;
+            margin-bottom: 10px;
         }
 
-        .tech-title {
-            font-size: 2.2em;
-            margin-bottom: 50px;
-            font-weight: 700;
-            letter-spacing: 1px;
+        .portfolio-overlay p {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.95em;
+            line-height: 1.6;
+        }
+
+        /* TECNOLOGÍAS */
+        .tech-section {
+            background: linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 100%);
+            color: #ffffff;
+            padding: 120px 40px !important;
+        }
+
+        .tech-section .section-title {
+            color: #ffffff;
+        }
+
+        .tech-section .section-title::after {
+            background: linear-gradient(90deg, #ffffff, transparent);
         }
 
         .tech-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 30px;
-            max-width: 900px;
-            margin: 0 auto;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 25px;
+            margin-top: 70px;
         }
 
-        .tech-item {
-            background: rgba(255, 255, 255, 0.05);
-            padding: 25px;
-            border-radius: 8px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
+        .tech-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            padding: 35px 25px;
+            border-radius: 12px;
+            text-align: center;
             transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
         }
 
-        .tech-item:hover {
-            background: rgba(255, 255, 255, 0.1);
-            border-color: rgba(255, 255, 255, 0.3);
-            transform: translateY(-5px);
+        .tech-card:hover {
+            background: rgba(255, 255, 255, 0.08);
+            border-color: rgba(255, 255, 255, 0.15);
+            transform: translateY(-8px);
         }
 
-        .tech-item-name {
-            font-weight: 600;
-            font-size: 1.1em;
+        .tech-card-name {
+            font-weight: 700;
+            font-size: 1.05em;
+            letter-spacing: 0.5px;
         }
 
+        /* FOOTER */
         footer {
             background-color: #000;
-            color: #ffffff;
+            color: rgba(255, 255, 255, 0.7);
             text-align: center;
-            padding: 30px 20px;
-            border-top: 3px solid #2d2d2d;
+            padding: 50px 40px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
         }
 
         footer p {
-            opacity: 0.8;
+            font-weight: 500;
         }
 
+        .social-links {
+            margin-bottom: 30px;
+        }
+
+        .social-links a {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: #ffffff;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 12px;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background: rgba(255, 255, 255, 0.15);
+            border-color: rgba(255, 255, 255, 0.3);
+        }
+
+        /* RESPONSIVE */
         @media (max-width: 768px) {
-            header h1 {
-                font-size: 2.5em;
+            nav {
+                padding: 0 30px;
             }
 
-            header p {
+            nav a {
+                margin-left: 20px;
+                font-size: 0.9em;
+            }
+
+            .header-content h1 {
+                font-size: 3em;
+            }
+
+            .header-content .subtitle {
                 font-size: 1.1em;
             }
 
-            .portfolio-title {
-                font-size: 1.8em;
+            .container {
+                padding: 80px 25px;
             }
 
-            .tech-title {
-                font-size: 1.8em;
+            .about {
+                padding: 80px 25px !important;
+            }
+
+            .portfolio-section {
+                padding: 80px 25px !important;
+            }
+
+            .tech-section {
+                padding: 80px 25px !important;
+            }
+
+            .section-title {
+                font-size: 2em;
             }
 
             .portfolio-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .tech-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 480px) {
+            nav {
+                padding: 0 20px;
+            }
+
+            nav a {
+                margin-left: 15px;
+                font-size: 0.8em;
+            }
+
+            .header-content h1 {
+                font-size: 2.2em;
+            }
+
+            .header-content .subtitle {
+                font-size: 1em;
+            }
+
+            .tech-grid {
                 grid-template-columns: 1fr;
             }
         }
     </style>
 </head>
 <body>
+    <nav>
+        <div class="logo">SL</div>
+        <div>
+            <a href="#portfolio">Portafolio</a>
+            <a href="#tech">Herramientas</a>
+        </div>
+    </nav>
+
     <header>
-        <h1>SAMANTHA LINDO</h1>
-        <p>Diseñadora Gráfica | Creadora de Identidades Visuales</p>
+        <div class="header-content">
+            <h1>SAMANTHA LINDO</h1>
+            <p class="subtitle">Diseñadora Gráfica & Creadora de Identidades Visuales</p>
+            <a href="#portfolio" class="cta-button">Ver Trabajos</a>
+        </div>
     </header>
 
-    <div class="container">
-        <div class="intro">
-            <p>Transformo ideas en diseños visuales impactantes. Especializada en identidad corporativa, diseño editorial y branding con un enfoque minimalista y contemporáneo.</p>
-        </div>
-
-        <h2 class="portfolio-title">Trabajos Destacados</h2>
-
-        <div class="portfolio-grid">
-            <div class="portfolio-item">
-                <img src="https://imgur.com/1.jpg" alt="Proyecto 1">
-                <div class="portfolio-item-title">Identidad Corporativa</div>
-            </div>
-            <div class="portfolio-item">
-                <img src="https://imgur.com/2.jpg" alt="Proyecto 2">
-                <div class="portfolio-item-title">Diseño Editorial</div>
-            </div>
-            <div class="portfolio-item">
-                <img src="https://imgur.com/3.jpg" alt="Proyecto 3">
-                <div class="portfolio-item-title">Branding Digital</div>
-            </div>
-            <div class="portfolio-item">
-                <img src="https://imgur.com/4.jpg" alt="Proyecto 4">
-                <div class="portfolio-item-title">Campaña Publicitaria</div>
-            </div>
-            <div class="portfolio-item">
-                <img src="https://imgur.com/5.jpg" alt="Proyecto 5">
-                <div class="portfolio-item-title">Packaging Design</div>
-            </div>
-        </div>
-    </div>
-
-    <div class="tech-section">
+    <section class="about">
         <div class="container">
-            <h2 class="tech-title">Tecnologías & Herramientas</h2>
-            <div class="tech-grid">
-                <div class="tech-item">
-                    <div class="tech-item-name">Adobe Illustrator</div>
+            <h2 class="section-title">Sobre Mí</h2>
+            <p class="about-text">
+                Soy una diseñadora gráfica apasionada por crear identidades visuales poderosas y coherentes. 
+                Con experiencia en branding, diseño editorial y comunicación visual, transformo conceptos 
+                en diseños impactantes que comunican, inspiran y generan conexión. Mi enfoque combina 
+                creatividad estratégica con atención al detalle.
+            </p>
+        </div>
+    </section>
+
+    <section class="portfolio-section" id="portfolio">
+        <div class="container">
+            <h2 class="section-title">Trabajos Destacados</h2>
+            
+            <div class="portfolio-grid">
+                <div class="portfolio-card">
+                    <img src="https://imgur.com/1.jpg" alt="Identidad Corporativa">
+                    <div class="portfolio-overlay">
+                        <h3>Identidad Corporativa</h3>
+                        <p>Desarrollo completo de identidad visual para marca premium</p>
+                    </div>
                 </div>
-                <div class="tech-item">
-                    <div class="tech-item-name">Adobe Photoshop</div>
+
+                <div class="portfolio-card">
+                    <img src="https://imgur.com/2.jpg" alt="Diseño Editorial">
+                    <div class="portfolio-overlay">
+                        <h3>Diseño Editorial</h3>
+                        <p>Maquetación y diseño de publicaciones de alto impacto</p>
+                    </div>
                 </div>
-                <div class="tech-item">
-                    <div class="tech-item-name">Adobe InDesign</div>
+
+                <div class="portfolio-card">
+                    <img src="https://imgur.com/3.jpg" alt="Branding Digital">
+                    <div class="portfolio-overlay">
+                        <h3>Branding Digital</h3>
+                        <p>Identidad visual integrada para plataformas digitales</p>
+                    </div>
                 </div>
-                <div class="tech-item">
-                    <div class="tech-item-name">Figma</div>
+
+                <div class="portfolio-card">
+                    <img src="https://imgur.com/4.jpg" alt="Campaña Publicitaria">
+                    <div class="portfolio-overlay">
+                        <h3>Campaña Publicitaria</h3>
+                        <p>Concepto y ejecución de campañas visuales integradas</p>
+                    </div>
                 </div>
-                <div class="tech-item">
-                    <div class="tech-item-name">CorelDRAW</div>
-                </div>
-                <div class="tech-item">
-                    <div class="tech-item-name">Adobe XD</div>
+
+                <div class="portfolio-card">
+                    <img src="https://imgur.com/5.jpg" alt="Packaging Design">
+                    <div class="portfolio-overlay">
+                        <h3>Packaging Design</h3>
+                        <p>Diseño de empaque innovador y funcional</p>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
+
+    <section class="tech-section" id="tech">
+        <div class="container">
+            <h2 class="section-title">Herramientas & Tecnologías</h2>
+            
+            <div class="tech-grid">
+                <div class="tech-card">
+                    <div class="tech-card-name">Adobe Illustrator</div>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-card-name">Adobe Photoshop</div>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-card-name">Adobe InDesign</div>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-card-name">Figma</div>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-card-name">Adobe XD</div>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-card-name">CorelDRAW</div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <footer>
+        <div class="social-links">
+            <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" title="Behance"><i class="fab fa-behance"></i></a>
+            <a href="#" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            <a href="mailto:contacto@samanthalindo.com" title="Email"><i class="fas fa-envelope"></i></a>
+        </div>
         <p>&copy; 2025 Samantha Lindo. Todos los derechos reservados.</p>
     </footer>
 </body>
