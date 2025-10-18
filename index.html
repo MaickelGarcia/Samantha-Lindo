@@ -90,7 +90,6 @@
             width: 100%;
         }
 
-        /* HERO SECTION */
         .hero {
             min-height: 100vh;
             display: flex;
@@ -256,7 +255,6 @@
             color: var(--black);
         }
 
-        /* ABOUT SECTION */
         .about {
             padding: 150px 8%;
             background: var(--off-white);
@@ -451,7 +449,6 @@
             line-height: 1.6;
         }
 
-        /* SKILLS SECTION */
         .skills {
             padding: 150px 8%;
             background: var(--black);
@@ -542,7 +539,6 @@
             letter-spacing: 2px;
         }
 
-        /* CONTACT SECTION */
         .contact {
             padding: 150px 8%;
             background: var(--off-white);
@@ -616,7 +612,6 @@
             transform: scale(1.1) rotate(360deg);
         }
 
-        /* FOOTER */
         footer {
             background: var(--black);
             color: rgba(255, 255, 255, 0.5);
@@ -625,7 +620,6 @@
             border-top: 1px solid rgba(255, 255, 255, 0.1);
         }
 
-        /* RESPONSIVE */
         @media (max-width: 1024px) {
             .hero-content h1 { font-size: 4em; }
             .about-container { grid-template-columns: 1fr; }
@@ -799,7 +793,6 @@
     </footer>
 
     <script>
-        // Custom cursor
         const cursor = document.querySelector('.cursor');
         const cursorFollower = document.querySelector('.cursor-follower');
 
@@ -813,7 +806,6 @@
             }, 100);
         });
 
-        // Cursor hover effect
         const hoverElements = document.querySelectorAll('a, button, .portfolio-item');
         hoverElements.forEach(el => {
             el.addEventListener('mouseenter', () => {
@@ -826,7 +818,6 @@
             });
         });
 
-        // Smooth scroll
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -836,7 +827,6 @@
             });
         });
 
-        // Parallax effect on hero
         window.addEventListener('scroll', () => {
             const scrolled = window.pageYOffset;
             const hero = document.querySelector('.hero-content');
