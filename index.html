@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Samantha Lindo - Diseñadora Gráfica</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #ffffff;
+            color: #1a1a1a;
+            line-height: 1.6;
+        }
+
+        header {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            color: #ffffff;
+            padding: 80px 20px;
+            text-align: center;
+            border-bottom: 3px solid #000;
+        }
+
+        header h1 {
+            font-size: 3.5em;
+            margin-bottom: 10px;
+            font-weight: 700;
+            letter-spacing: 2px;
+        }
+
+        header p {
+            font-size: 1.3em;
+            opacity: 0.9;
+            font-weight: 300;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        .intro {
+            text-align: center;
+            margin-bottom: 80px;
+            font-size: 1.1em;
+            color: #444;
+        }
+
+        .intro p {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .portfolio-title {
+            text-align: center;
+            font-size: 2.2em;
+            margin-bottom: 60px;
+            color: #1a1a1a;
+            position: relative;
+            padding-bottom: 20px;
+        }
+
+        .portfolio-title::after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 3px;
+            background-color: #000;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-bottom: 100px;
+        }
+
+        .portfolio-item {
+            background: #f5f5f5;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .portfolio-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .portfolio-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .portfolio-item-title {
+            padding: 20px;
+            text-align: center;
+            font-weight: 600;
+            color: #1a1a1a;
+            border-top: 2px solid #000;
+        }
+
+        .tech-section {
+            background-color: #1a1a1a;
+            color: #ffffff;
+            padding: 80px 20px;
+            text-align: center;
+            margin-top: 60px;
+        }
+
+        .tech-title {
+            font-size: 2.2em;
+            margin-bottom: 50px;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 30px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .tech-item {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 25px;
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .tech-item:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 255, 255, 0.3);
+            transform: translateY(-5px);
+        }
+
+        .tech-item-name {
+            font-weight: 600;
+            font-size: 1.1em;
+        }
+
+        footer {
+            background-color: #000;
+            color: #ffffff;
+            text-align: center;
+            padding: 30px 20px;
+            border-top: 3px solid #2d2d2d;
+        }
+
+        footer p {
+            opacity: 0.8;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2.5em;
+            }
+
+            header p {
+                font-size: 1.1em;
+            }
+
+            .portfolio-title {
+                font-size: 1.8em;
+            }
+
+            .tech-title {
+                font-size: 1.8em;
+            }
+
+            .portfolio-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>SAMANTHA LINDO</h1>
+        <p>Diseñadora Gráfica | Creadora de Identidades Visuales</p>
+    </header>
+
+    <div class="container">
+        <div class="intro">
+            <p>Transformo ideas en diseños visuales impactantes. Especializada en identidad corporativa, diseño editorial y branding con un enfoque minimalista y contemporáneo.</p>
+        </div>
+
+        <h2 class="portfolio-title">Trabajos Destacados</h2>
+
+        <div class="portfolio-grid">
+            <div class="portfolio-item">
+                <img src="https://imgur.com/1.jpg" alt="Proyecto 1">
+                <div class="portfolio-item-title">Identidad Corporativa</div>
+            </div>
+            <div class="portfolio-item">
+                <img src="https://imgur.com/2.jpg" alt="Proyecto 2">
+                <div class="portfolio-item-title">Diseño Editorial</div>
+            </div>
+            <div class="portfolio-item">
+                <img src="https://imgur.com/3.jpg" alt="Proyecto 3">
+                <div class="portfolio-item-title">Branding Digital</div>
+            </div>
+            <div class="portfolio-item">
+                <img src="https://imgur.com/4.jpg" alt="Proyecto 4">
+                <div class="portfolio-item-title">Campaña Publicitaria</div>
+            </div>
+            <div class="portfolio-item">
+                <img src="https://imgur.com/5.jpg" alt="Proyecto 5">
+                <div class="portfolio-item-title">Packaging Design</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="tech-section">
+        <div class="container">
+            <h2 class="tech-title">Tecnologías & Herramientas</h2>
+            <div class="tech-grid">
+                <div class="tech-item">
+                    <div class="tech-item-name">Adobe Illustrator</div>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-item-name">Adobe Photoshop</div>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-item-name">Adobe InDesign</div>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-item-name">Figma</div>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-item-name">CorelDRAW</div>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-item-name">Adobe XD</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Samantha Lindo. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>
