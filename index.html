@@ -228,19 +228,22 @@
             position: relative;
             border-radius: 0;
             overflow: hidden;
-            background: #000;
+            background: #f8f8f8;
             height: 600px;
             cursor: pointer;
             flex: 0 0 100%;
             min-width: 100%;
             scroll-snap-align: start;
             transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .portfolio-card img {
-            width: 100%;
+            width: auto;
             height: 100%;
-            object-fit: cover;
+            object-fit: contain;
             transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
             display: block;
         }
@@ -512,7 +515,7 @@
     <header>
         <div class="header-content">
             <h1>SAMANTHA LINDO</h1>
-            <p class="subtitle">Diseñadora Gráfica</p>
+            <p class="subtitle">Diseñadora Gráfica & Creadora de Identidades Visuales</p>
             <a href="#portfolio" class="cta-button">Ver Trabajos</a>
         </div>
     </header>
@@ -537,7 +540,7 @@
         <div class="portfolio-wrapper">
             <div class="portfolio-grid" id="portfolioSlider">
                 <div class="portfolio-card">
-                    <img src="https://i.imgur.com/dTQzl7p.jpeg" alt="Identidad Corporativa">
+                    <img src="https://imgur.com/1.jpg" alt="Identidad Corporativa">
                     <div class="portfolio-overlay">
                         <h3>Identidad Corporativa</h3>
                         <p>Desarrollo completo de identidad visual para marca premium</p>
@@ -598,6 +601,15 @@
                 <div class="tech-card">
                     <div class="tech-card-name">Adobe InDesign</div>
                 </div>
+                <div class="tech-card">
+                    <div class="tech-card-name">Figma</div>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-card-name">Adobe XD</div>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-card-name">CorelDRAW</div>
+                </div>
             </div>
         </div>
     </section>
@@ -605,6 +617,9 @@
     <footer>
         <div class="social-links">
             <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" title="Behance"><i class="fab fa-behance"></i></a>
+            <a href="#" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            <a href="mailto:contacto@samanthalindo.com" title="Email"><i class="fas fa-envelope"></i></a>
         </div>
         <p>&copy; 2025 Samantha Lindo. Todos los derechos reservados.</p>
     </footer>
@@ -612,16 +627,18 @@
     <script>
         function scrollLeft() {
             const slider = document.getElementById('portfolioSlider');
+            const cardWidth = slider.querySelector('.portfolio-card').offsetWidth;
             slider.scrollBy({
-                left: -window.innerWidth,
+                left: -cardWidth,
                 behavior: 'smooth'
             });
         }
 
         function scrollRight() {
             const slider = document.getElementById('portfolioSlider');
+            const cardWidth = slider.querySelector('.portfolio-card').offsetWidth;
             slider.scrollBy({
-                left: window.innerWidth,
+                left: cardWidth,
                 behavior: 'smooth'
             });
         }
